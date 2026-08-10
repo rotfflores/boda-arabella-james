@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500&family=Parisienne&display=swap');
+
+:root { --wine:#570719; --wine-dark:#2c020e; --ivory:#f3e9de; --ink:#321620; --gold:#aa8b5f; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--wine-dark); color:var(--ivory); font-family:'Montserrat',sans-serif; }
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+.hero { min-height:100svh; position:relative; overflow:hidden; padding:28px clamp(20px,5vw,70px) 60px; display:flex; flex-direction:column; align-items:center; background:radial-gradient(circle at 50% 45%,#7b152d 0,#570719 40%,#38020f 100%); }
+.grain { position:absolute; inset:0; pointer-events:none; opacity:.2; background-image:repeating-linear-gradient(115deg,transparent 0 16px,rgba(255,255,255,.045) 17px,transparent 18px); }
+nav { width:100%; max-width:1200px; z-index:3; display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:.22em; text-transform:uppercase; }
+nav div { display:flex; gap:25px; }
+.monogram { font:30px 'Parisienne',cursive; letter-spacing:-.15em; text-transform:none; }
+.monogram span { margin-left:-2px; }
+.intro { z-index:2; text-align:center; margin:clamp(35px,8vh,85px) 0 8px; }
+.eyebrow { margin:0 0 12px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; }
+h1,h2 { font-family:'Italiana',serif; font-weight:400; margin:0; line-height:.9; }
+h1 { font-size:clamp(48px,9vw,105px); }
+h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
+.envelope { position:relative; z-index:2; width:min(440px,82vw); height:min(410px,80vw); margin-top:20px; background:transparent; border:0; cursor:pointer; perspective:1200px; filter:drop-shadow(0 25px 25px rgba(0,0,0,.25)); }
+.envelope__back { position:absolute; left:3%; right:3%; bottom:2%; height:66%; background:#eaddcf; }
+.card { position:absolute; z-index:2; left:10%; right:10%; bottom:12%; height:80%; background:#f5ece3; transition:transform 1.15s cubic-bezier(.2,.8,.2,1); transform:translateY(-22%); color:#53323b; }
+.is-open .card { transform:translateY(-65%); }
+.envelope__front { position:absolute; z-index:4; left:3%; right:3%; bottom:2%; height:66%; background:linear-gradient(145deg,transparent 49.6%,#f4eade 50%) 0 0/50% 100% no-repeat,linear-gradient(215deg,transparent 49.6%,#eadbca 50%) 100% 0/50% 100% no-repeat; }
+.envelope__front:after { content:""; position:absolute; inset:22% 0 0; background:linear-gradient(35deg,#eee1d3 49%,transparent 50%) left/50% 100% no-repeat,linear-gradient(-35deg,#f5ebe0 49%,transparent 50%) right/50% 100% no-repeat; }
+.photo { position:absolute; width:41%; height:40%; background:#d8d0c8; border:7px solid #faf7f3; box-shadow:0 5px 12px #7a666655; overflow:hidden; }
+.photo i { position:absolute; inset:0; background:radial-gradient(circle at 45% 35%,#d1cbc4 0 12%,transparent 13%),linear-gradient(120deg,#201c1c 0 30%,#a39c96 31% 55%,#322d2c 56% 100%); filter:grayscale(1); }
+.photo--one { left:5%; top:4%; transform:rotate(-4deg); }
+.photo--two { left:9%; top:39%; transform:rotate(4deg); }
+.date-card { position:absolute; right:-2%; top:14%; width:54%; height:35%; display:grid; place-content:center; background:#f8f1ea; border-radius:50% 50% 42% 48%; font:28px/1 'Parisienne',cursive; transform:rotate(4deg); }
+.flower { position:absolute; z-index:2; right:13%; bottom:12%; width:105px; aspect-ratio:1; display:grid; place-content:center; background:var(--wine); color:white; font-size:9px; letter-spacing:.12em; text-transform:uppercase; line-height:1.5; clip-path:polygon(50% 0,61% 12%,78% 7%,85% 23%,100% 32%,92% 50%,100% 67%,83% 76%,77% 94%,59% 88%,47% 100%,35% 86%,17% 92%,12% 73%,0 63%,8% 47%,0 31%,17% 22%,23% 5%,40% 11%); }
+.flower small { font-size:8px; }
+.seal { position:absolute; z-index:6; left:50%; bottom:23%; transform:translate(-50%,50%); width:74px; aspect-ratio:1; border-radius:50%; display:grid; place-content:center; background:#6e0920; border:2px solid #8e2941; box-shadow:0 4px 12px #2c020e88; font:27px 'Parisienne',cursive; transition:.5s; }
+.seal span { margin-left:-5px; }.is-open .seal { transform:translate(-50%,50%) scale(.82); opacity:.15; }
+.open-hint { z-index:2; min-height:1em; margin:12px 0 0; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
+.hero-date { z-index:2; text-align:center; margin-top:17px; }
+.hero-date p { margin:0 0 4px; font:24px 'Italiana',serif; text-transform:uppercase; }
+.hero-date strong { display:block; font-size:12px; letter-spacing:.24em; }.hero-date span { font:22px 'Parisienne',cursive; }
+.details { min-height:100svh; padding:100px 24px 70px; background:var(--ivory); color:var(--ink); text-align:center; display:flex; flex-direction:column; align-items:center; }
+.details h2,.rsvp h2 { font-size:clamp(48px,8vw,88px); }
+.countdown { display:grid; grid-template-columns:repeat(4,1fr); width:min(650px,100%); margin:65px auto 35px; border-block:1px solid #927d71; }
+.countdown__item { padding:22px 5px; border-right:1px solid #927d71; }.countdown__item:last-child{border-right:0}.countdown strong { display:block; font:clamp(24px,6vw,46px) 'Italiana',serif; }.countdown span { display:block; margin-top:8px; font-size:8px; letter-spacing:.18em; text-transform:uppercase; }
+.details__copy { max-width:480px; font:17px/1.8 'Italiana',serif; }.outline-button,.light-button { margin-top:20px; padding:15px 30px; border:1px solid currentColor; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
+.names { margin-top:60px; font:52px 'Parisienne',cursive; }.names span { color:var(--wine); }
+.rsvp { min-height:80svh; padding:100px 24px 45px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 20%,#79172f,#460511 70%); }.rsvp>p:not(.eyebrow,.footer-mark){max-width:430px;line-height:1.8}.footer-mark { margin:90px 0 0; font:35px 'Parisienne',cursive; }
+@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:83px}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.seal{transition:none}}
