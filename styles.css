@@ -43,5 +43,43 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .details__copy { max-width:480px; font:17px/1.8 'Italiana',serif; }.outline-button,.light-button { margin-top:20px; padding:15px 30px; border:1px solid currentColor; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
 .names { margin-top:60px; font:52px 'Parisienne',cursive; }.names span { color:var(--wine); }
 .rsvp { min-height:80svh; padding:100px 24px 45px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 20%,#79172f,#460511 70%); }.rsvp>p:not(.eyebrow,.footer-mark){max-width:430px;line-height:1.8}.footer-mark { margin:90px 0 0; font:35px 'Parisienne',cursive; }
-@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:83px}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
+
+/* Editorial stationery composition inspired by the supplied reference */
+.hero { min-height:100svh; padding-bottom:48px; background:radial-gradient(ellipse at 48% 38%,#7a0c29 0,#5d061e 47%,#35000f 100%); }
+.intro { margin:clamp(28px,5vh,55px) 0 0; }
+.intro h1 { font-family:'Parisienne',cursive; font-size:clamp(58px,8vw,100px); line-height:.96; }
+.intro h1 em { font-family:inherit; }
+.invitation-stage { position:relative; z-index:2; width:min(720px,96vw); height:min(650px,86vw); min-height:500px; display:grid; place-items:center; margin:-2px auto 0; }
+.floral-arch { position:absolute; z-index:1; top:-3%; left:50%; width:96%; height:90%; object-fit:contain; transform:translateX(-50%); pointer-events:none; filter:drop-shadow(0 10px 10px rgba(24,0,7,.28)); }
+.envelope { z-index:2; width:min(455px,69vw); height:min(535px,78vw); min-height:420px; margin:38px 0 0; filter:drop-shadow(0 28px 32px rgba(22,0,5,.42)); }
+.envelope__back { left:0; right:0; bottom:0; height:65%; background:#ece2d7; border:1px solid rgba(94,63,54,.12); }
+.card { left:7%; right:7%; bottom:12%; height:88%; background:transparent; transform:translateY(-8%); overflow:visible; }
+.is-open .card { transform:translateY(-48%); }
+.lace { position:absolute; z-index:0; left:7%; right:7%; top:-4%; height:45%; border-radius:50% 50% 42% 42%; opacity:.9; background:radial-gradient(circle,transparent 34%,#eadfda 35% 42%,transparent 43%) 0 0/22px 22px,radial-gradient(circle,#d8c1c2 0 2px,transparent 3px) 5px 5px/18px 18px; border:1px solid #d9c5c4; }
+.photo { width:43%; height:42%; border:8px solid #fbf8f4; background-image:url('assets/couple-photos.png'); background-size:200% 100%; background-repeat:no-repeat; box-shadow:0 8px 15px rgba(59,37,32,.2); }
+.photo--one { z-index:3; left:5%; top:8%; transform:rotate(-3deg); background-position:left center; }
+.photo--two { z-index:4; left:10%; top:34%; transform:rotate(2deg); background-position:right center; }
+.date-card { z-index:2; right:-4%; top:22%; width:61%; height:38%; border-radius:52% 48% 47% 53%; font-size:clamp(29px,4vw,40px); color:#4e4240; box-shadow:0 4px 12px rgba(76,53,47,.08); }
+.flower { z-index:7; right:7%; bottom:31%; width:125px; background:#700922; font-family:'Italiana',serif; box-shadow:0 8px 15px rgba(67,0,17,.22); transition:transform .9s cubic-bezier(.2,.8,.2,1); }
+.is-open .flower { transform:translateY(-125%); }
+.envelope__front { left:0; right:0; bottom:0; height:61%; background:#f3e9df; border:1px solid rgba(94,63,54,.1); overflow:hidden; }
+.envelope__front:before { content:""; position:absolute; inset:0; background:linear-gradient(34deg,transparent 49.3%,rgba(176,151,137,.23) 50%,transparent 50.7%),linear-gradient(-34deg,transparent 49.3%,rgba(176,151,137,.23) 50%,transparent 50.7%); }
+.envelope__front:after { display:none; }
+.front-monogram { position:absolute; z-index:3; left:50%; bottom:13%; transform:translateX(-50%); color:#503c3d; font:52px 'Parisienne',cursive; letter-spacing:-.18em; }
+.front-monogram span { margin-left:-5px; }
+.open-hint { margin-top:-30px; }
+.hero-date { margin-top:11px; }
+.hero-date p { letter-spacing:.06em; }
+
+@media (max-width:600px){
+  .hero{padding:18px 12px 42px;min-height:100svh}
+  nav{padding-inline:8px}nav div{gap:14px;font-size:8px}
+  .intro{margin-top:43px}.intro h1{font-size:47px;white-space:nowrap}.intro .eyebrow{font-size:8px}
+  .invitation-stage{width:100vw;height:500px;min-height:500px;margin-top:0}
+  .floral-arch{width:116%;height:86%;top:1%}
+  .envelope{width:310px;height:405px;min-height:405px;margin-top:54px}
+  .card{height:94%;left:6%;right:6%}.photo{border-width:6px}.date-card{font-size:26px}.flower{width:94px;font-size:7px}.flower small{font-size:6px}
+  .front-monogram{font-size:43px}.open-hint{margin-top:-18px}.hero-date p{font-size:18px}.hero-date span{font-size:20px}
+  .details{padding-top:80px}.countdown{margin-top:45px}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.seal{transition:none}}
