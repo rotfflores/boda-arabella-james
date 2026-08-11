@@ -222,6 +222,40 @@
       link.click();
       URL.revokeObjectURL(url);
     });
+
+    const motionItems = document.querySelectorAll([
+      '.details-panel .eyebrow',
+      '.details-panel .countdown',
+      '.details-panel .address-copy',
+      '.details-panel .address-button',
+      '.details-panel .signature',
+      '.details-panel .info-card',
+      '.details-panel .faq > .card-kicker',
+      '.details-panel .faq > h2',
+      '.details-panel .faq details',
+      '.details-panel .contact-copy',
+      '.details-panel .contact-links',
+      '.site-footer p'
+    ].join(','));
+
+    motionItems.forEach((item, index) => {
+      item.classList.add('motion-item');
+      item.style.setProperty('--motion-delay', `${(index % 3) * 90}ms`);
+    });
+
+    if ('IntersectionObserver' in window) {
+      const motionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
+        });
+      }, {
+        threshold: window.matchMedia('(max-width: 600px)').matches ? 0.12 : 0.18,
+        rootMargin: '0px 0px -7% 0px'
+      });
+      motionItems.forEach((item) => motionObserver.observe(item));
+    } else {
+      motionItems.forEach((item) => item.classList.add('is-visible'));
+    }
   </script>
 </body>
 </html>

@@ -108,6 +108,19 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 .revealed .item-heading { animation:textIn .7s 2.8s ease-out forwards; }
 .revealed .item-footer { animation:textIn .7s 3.05s ease-out forwards; }
 
+/* Animación del contenido posterior; no modifica la apertura del sobre. */
+.motion-item { opacity:0; transform:translateY(24px) scale(.99); transition:opacity .72s ease,transform .85s cubic-bezier(.2,.75,.22,1); transition-delay:var(--motion-delay,0ms); will-change:opacity,transform; }
+.motion-item.is-visible { opacity:1; transform:translate3d(0,0,0) scale(1); }
+.countdown.is-visible strong { animation:numberBreath 2.6s ease-in-out infinite; }
+.countdown.is-visible div:nth-of-type(2) strong { animation-delay:.18s; }
+.countdown.is-visible div:nth-of-type(3) strong { animation-delay:.36s; }
+.countdown.is-visible div:nth-of-type(4) strong { animation-delay:.54s; }
+.signature.is-visible { animation:signatureGlow 4.6s ease-in-out infinite; }
+.address-button.is-visible { animation:ctaBreath 3.2s ease-in-out infinite; }
+.info-card.is-visible { animation:cardBreath 5.2s ease-in-out infinite; }
+.info-card.is-visible:nth-child(even) { animation-delay:.65s; }
+.revealed .whatsapp-float { animation:whatsappPulse 2.8s ease-in-out infinite; }
+
 @keyframes pulse { 50%{opacity:.45} }
 @keyframes envelopeIn { from{opacity:0;transform:translateY(5%)} to{opacity:1;transform:none} }
 @keyframes riseIn { from{opacity:0;transform:translateY(4%);filter:blur(4px)} to{opacity:1;transform:none;filter:none} }
@@ -120,11 +133,25 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 @keyframes photoLeftTwo { from{opacity:0;transform:translateX(-22%) rotate(-12deg)} to{opacity:1;transform:rotate(-6deg)} }
 @keyframes flowerPop { from{opacity:0;transform:scale(.45) rotate(-12deg)} to{opacity:1;transform:scale(1)} }
 @keyframes sealIn { from{opacity:0;transform:translateX(-50%) scale(.5) rotate(-8deg)} to{opacity:1;transform:translateX(-50%) scale(1)} }
+@keyframes numberBreath { 0%,100%{opacity:1;transform:translateY(0)} 50%{opacity:.76;transform:translateY(-3px)} }
+@keyframes signatureGlow { 0%,100%{filter:drop-shadow(0 0 0 #7a263500)} 50%{filter:drop-shadow(0 4px 7px #7a26352c)} }
+@keyframes ctaBreath { 0%,100%{box-shadow:0 0 0 0 #6b142500} 50%{box-shadow:0 7px 22px 1px #6b142525} }
+@keyframes cardBreath { 0%,100%{box-shadow:0 10px 28px #4e18200e} 50%{box-shadow:0 16px 34px #4e18201c} }
+@keyframes whatsappPulse { 0%,100%{transform:translateY(0);box-shadow:0 8px 24px #21000866} 50%{transform:translateY(-4px);box-shadow:0 13px 30px #21000880} }
 
 @media (prefers-reduced-motion:reduce) {
   .envelope-screen,.envelope-button,.invitation-stage,.details-panel,.site-footer { transition:none; }
   .revealed .envelope-back,.revealed .envelope-front,.revealed [class*="item-"] { opacity:1; animation:none; }
   .item-seal { transform:translateX(-50%); }
+  .motion-item,.motion-item.is-visible { opacity:1; transform:none; transition:none; animation:none; }
+  .countdown.is-visible strong,.signature.is-visible,.address-button.is-visible,.info-card.is-visible,.revealed .whatsapp-float { animation:none; }
+}
+
+@media (max-width:600px) {
+  .motion-item { transform:translateY(38px) scale(.975); transition-duration:.78s,.92s; }
+  .info-card.motion-item:nth-child(odd),.faq details.motion-item:nth-of-type(odd) { transform:translateX(-28px) scale(.98); }
+  .info-card.motion-item:nth-child(even),.faq details.motion-item:nth-of-type(even) { transform:translateX(28px) scale(.98); }
+  .motion-item.is-visible,.info-card.motion-item.is-visible,.faq details.motion-item.is-visible { transform:translate3d(0,0,0) scale(1); }
 }
 
 @media (max-width:430px) {
