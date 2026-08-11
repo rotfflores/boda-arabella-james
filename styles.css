@@ -31,7 +31,7 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:radial-gr
 .polaroid-one { left:15.5%; top:9%; width:32%; aspect-ratio:.81; background-position:left top; transform:rotate(-5.5deg); }
 .polaroid-two { left:10%; top:35%; width:34%; aspect-ratio:.88; background-position:right top; transform:rotate(-6deg); }
 .save-date { position:absolute; z-index:4; right:10%; top:8%; width:64%; height:45%; object-fit:contain; transform:rotate(4deg); filter:drop-shadow(0 6px 7px #30000b38); }
-.date-flower { position:absolute; z-index:8; left:35%; top:36.5%; width:44%; height:34%; object-fit:contain; filter:drop-shadow(0 7px 8px #36000e44); }
+.date-flower { position:absolute; z-index:6; left:41%; top:34%; width:44%; height:34%; object-fit:contain; filter:drop-shadow(0 7px 8px #36000e44); }
 .envelope-front { position:absolute; z-index:7; left:7%; top:47%; width:88%; height:53%; overflow:hidden; background:linear-gradient(120deg,#f7eee1 0 48%,#ede0d0 49% 51%,#f8efe3 52%); clip-path:polygon(0 0,50% 26%,100% 0,100% 100%,0 100%); box-shadow:inset 0 1px 0 #fff8; opacity:0; }
 .envelope-front:before,.envelope-front:after { content:""; position:absolute; bottom:0; width:67%; height:88%; opacity:.42; border-top:1px solid #d9ccbb; }
 .envelope-front:before { left:-18%; transform:skewX(37deg); }
