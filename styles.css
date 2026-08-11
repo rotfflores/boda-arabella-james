@@ -83,3 +83,37 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
   .details{padding-top:80px}.countdown{margin-top:45px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.seal{transition:none}}
+
+/* Closer match to the reference: restrained florals and a clean stationery envelope */
+nav { visibility:hidden; height:20px; }
+.intro { margin-top:24px; }
+.invitation-stage { width:min(580px,94vw); height:min(640px,105vw); }
+.floral-arch { display:none; }
+.botanical { position:absolute; z-index:1; top:18%; width:90px; height:310px; pointer-events:none; }
+.botanical:before,.botanical:after,.botanical i { content:""; position:absolute; display:block; }
+.botanical:before { left:45%; top:12%; width:2px; height:88%; background:#81955b; transform:rotate(-4deg); transform-origin:bottom; box-shadow:13px 10px 0 -1px #9bad6d,-13px 52px 0 -1px #71884d; }
+.botanical:after { left:34%; top:7%; width:22px; height:32px; border-radius:70% 18% 65% 45%; background:#f3eee3; border:1px solid #d8cebd; transform:rotate(33deg); }
+.botanical i { width:12px; height:65px; border-radius:50%; background:repeating-radial-gradient(ellipse at center,#9bb866 0 3px,transparent 4px 12px); }
+.botanical i:nth-child(1){top:65px;left:52px;transform:rotate(-15deg)}.botanical i:nth-child(2){top:140px;left:31px;transform:rotate(10deg)}.botanical i:nth-child(3){top:210px;left:54px;transform:rotate(-8deg)}
+.botanical--left { left:4%; transform:rotate(-8deg); }.botanical--right { right:4%; transform:scaleX(-1) rotate(-8deg); }
+.envelope { width:min(410px,70vw); height:min(540px,88vw); margin-top:20px; }
+.lace { left:14%; right:14%; top:1%; height:42%; border-radius:50%; opacity:.68; background:repeating-radial-gradient(circle,transparent 0 10px,rgba(205,186,188,.55) 11px 12px); border:5px dotted #d8c5c6; -webkit-mask:none; mask:none; }
+.card { left:8%; right:8%; height:88%; bottom:10%; }
+.photo { width:44%; height:39%; }
+.photo--one { left:4%; top:13%; }.photo--two { left:11%; top:39%; }
+.date-card { right:-1%; top:27%; width:60%; height:32%; border-radius:50%; }
+.envelope__front { height:61%; overflow:visible; background:#f4ebe1; border:1px solid rgba(88,60,51,.11); clip-path:polygon(0 0,50% 25%,100% 0,100% 100%,0 100%); }
+.envelope__front:before { display:none; }
+.front-monogram { bottom:13%; }
+.flower { right:10%; bottom:45%; }
+.open-hint { display:none; }
+
+@media (max-width:600px){
+  nav{display:none}.intro{margin-top:34px}.intro h1{font-size:46px}
+  .invitation-stage{height:500px;min-height:500px;width:100%}
+  .envelope{width:300px;height:415px;min-height:415px;margin-top:27px}
+  .botanical{top:17%;height:255px;width:72px}.botanical--left{left:-1%}.botanical--right{right:-1%}
+  .botanical i:nth-child(3){top:185px}
+  .photo{height:37%}.photo--two{top:38%}.date-card{top:28%;font-size:25px}
+  .flower{right:8%;bottom:44%;width:90px}
+}
