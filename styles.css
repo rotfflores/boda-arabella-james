@@ -31,21 +31,20 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 .polaroid-one { left:15.5%; top:9%; width:32%; aspect-ratio:.81; background-position:left top; transform:rotate(-5.5deg); }
 .polaroid-two { left:10%; top:35%; width:34%; aspect-ratio:.88; background-position:right top; transform:rotate(-6deg); }
 .save-date { position:absolute; z-index:4; right:7%; top:5%; width:62%; height:42%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8% 5% 2%; color:#681326; background:linear-gradient(145deg,#f9f1e6,#eee1d1); border-radius:50% 50% 7% 7% / 43% 43% 8% 8%; transform:rotate(4deg); filter:drop-shadow(0 6px 7px #30000b38); }
-.save-date span,.save-date small { display:block; font:400 clamp(27px,7.2vw,64px)/.78 'Great Vibes',cursive; }
-.save-date small { margin-top:.14em; font-size:clamp(24px,6.4vw,57px); }
-.date-flower { position:absolute; z-index:6; left:41%; top:34%; width:44%; height:34%; object-fit:contain; filter:drop-shadow(0 7px 8px #36000e44); }
+.save-date span,.save-date small { display:block; font:400 clamp(30px,7.8vw,69px)/.78 'Great Vibes',cursive; }
+.save-date small { margin-top:.14em; font-size:clamp(27px,7vw,62px); }
+.date-flower { position:absolute; z-index:6; left:41%; top:34%; width:44%; height:34%; object-fit:contain; }
 .envelope-front { position:absolute; z-index:7; left:7%; top:47%; width:88%; height:53%; overflow:hidden; background:linear-gradient(120deg,#f7eee1 0 48%,#ede0d0 49% 51%,#f8efe3 52%); clip-path:polygon(0 0,50% 26%,100% 0,100% 100%,0 100%); box-shadow:inset 0 1px 0 #fff8; opacity:0; }
 .envelope-front:before,.envelope-front:after { content:""; position:absolute; bottom:0; width:67%; height:88%; opacity:.42; border-top:1px solid #d9ccbb; }
 .envelope-front:before { left:-18%; transform:skewX(37deg); }
 .envelope-front:after { right:-18%; transform:skewX(-37deg); }
-.monogram { position:absolute; z-index:9; left:50%; top:74%; color:#681326; font:400 clamp(44px,9vw,83px)/1 'Great Vibes',cursive; letter-spacing:-.22em; text-shadow:0 1px #fff; }
-.monogram span { margin-left:-.05em; }
+.seal { position:absolute; z-index:9; left:50%; top:67.5%; width:25%; height:auto; transform:translateX(-50%); filter:drop-shadow(0 7px 8px #36000e66); }
 .closing { position:absolute; z-index:20; left:4%; top:79.7%; width:92%; text-align:center; -webkit-font-smoothing:antialiased; text-rendering:geometricPrecision; }
 .closing p { margin:0 0 .8%; font:500 clamp(17px,4.2vw,37px)/1 'Cormorant Garamond',serif; letter-spacing:.055em; text-transform:uppercase; }
 .closing strong { display:block; font:500 clamp(16px,3.8vw,34px)/1.2 'Cormorant Garamond',serif; letter-spacing:.06em; }
 .closing span { display:block; margin-top:6.5%; font:400 clamp(31px,7.5vw,69px)/1 'Great Vibes',cursive; }
 
-.item-heading,.item-lace,.item-plant-left,.item-plant-top,.item-plant-right,.item-photo-one,.item-photo-two,.item-save-date,.item-date-flower,.item-monogram,.item-footer { opacity:0; }
+.item-heading,.item-lace,.item-plant-left,.item-plant-top,.item-plant-right,.item-photo-one,.item-photo-two,.item-save-date,.item-date-flower,.item-seal,.item-footer { opacity:0; }
 .revealed .envelope-back { animation:envelopeIn .65s .15s ease-out forwards; }
 .revealed .envelope-front { animation:envelopeIn .65s .35s ease-out forwards; }
 .revealed .item-lace { animation:riseIn .75s .65s ease-out forwards; }
@@ -56,7 +55,7 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 .revealed .item-photo-one { animation:photoLeft .75s 1.7s cubic-bezier(.2,.8,.2,1) forwards; }
 .revealed .item-photo-two { animation:photoLeftTwo .75s 1.95s cubic-bezier(.2,.8,.2,1) forwards; }
 .revealed .item-date-flower { animation:flowerPop .7s 2.25s cubic-bezier(.18,.9,.28,1.2) forwards; }
-.revealed .item-monogram { animation:monogramIn .7s 2.55s ease-out forwards; }
+.revealed .item-seal { animation:sealIn .7s 2.55s cubic-bezier(.18,.9,.28,1.2) forwards; }
 .revealed .item-heading { animation:textIn .7s 2.8s ease-out forwards; }
 .revealed .item-footer { animation:textIn .7s 3.05s ease-out forwards; }
 
@@ -71,10 +70,10 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 @keyframes photoLeft { from{opacity:0;transform:translateX(-22%) rotate(-12deg)} to{opacity:1;transform:rotate(-5.5deg)} }
 @keyframes photoLeftTwo { from{opacity:0;transform:translateX(-22%) rotate(-12deg)} to{opacity:1;transform:rotate(-6deg)} }
 @keyframes flowerPop { from{opacity:0;transform:scale(.45) rotate(-12deg)} to{opacity:1;transform:scale(1)} }
-@keyframes monogramIn { from{opacity:0;transform:translate(-50%,12%)} to{opacity:1;transform:translateX(-50%)} }
+@keyframes sealIn { from{opacity:0;transform:translateX(-50%) scale(.5) rotate(-8deg)} to{opacity:1;transform:translateX(-50%) scale(1)} }
 
 @media (prefers-reduced-motion:reduce) {
   .envelope-screen,.envelope-button,.invitation-stage { transition:none; }
   .revealed .envelope-back,.revealed .envelope-front,.revealed [class*="item-"] { opacity:1; animation:none; }
-  .item-monogram { transform:translateX(-50%); }
+  .item-seal { transform:translateX(-50%); }
 }
