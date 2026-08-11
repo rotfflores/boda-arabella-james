@@ -31,6 +31,9 @@ jobs:
           cp assets/flor-roja.png _site/assets/flor-roja.png
           cp assets/save-our-date.png _site/assets/save-our-date.png
           cp assets/couple-photos.png _site/assets/couple-photos.png
+          cp assets/planta-izquierda.png _site/assets/planta-izquierda.png
+          cp assets/planta-superior.png _site/assets/planta-superior.png
+          cp assets/planta-derecha.png _site/assets/planta-derecha.png
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

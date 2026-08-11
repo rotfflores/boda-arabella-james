@@ -19,6 +19,10 @@ h1 { font-size:clamp(48px,9vw,105px); }
 h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .envelope { position:relative; z-index:2; width:min(440px,82vw); height:min(410px,80vw); margin-top:20px; background:transparent; border:0; cursor:pointer; perspective:1200px; filter:drop-shadow(0 25px 25px rgba(0,0,0,.25)); }
 .envelope__back { position:absolute; left:3%; right:3%; bottom:2%; height:66%; background:#eaddcf; }
+.plant { position:absolute; z-index:1; object-fit:contain; pointer-events:none; user-select:none; filter:drop-shadow(0 5px 5px rgba(31,10,9,.12)); }
+.plant--left { left:-19%; top:29%; width:39%; height:62%; transform:rotate(-8deg); transform-origin:bottom; }
+.plant--top { z-index:3; right:-4%; top:-9%; width:30%; height:30%; transform:rotate(13deg); }
+.plant--right { right:-18%; top:7%; width:36%; height:70%; transform:rotate(7deg); transform-origin:bottom; }
 .card { position:absolute; z-index:2; left:10%; right:10%; bottom:12%; height:80%; background:#f5ece3; transition:transform 1.15s cubic-bezier(.2,.8,.2,1); transform:translateY(-22%); color:#53323b; }
 .is-open .card { transform:translateY(-65%); }
 .envelope__front { position:absolute; z-index:4; left:3%; right:3%; bottom:2%; height:66%; background:linear-gradient(145deg,transparent 49.6%,#f4eade 50%) 0 0/50% 100% no-repeat,linear-gradient(215deg,transparent 49.6%,#eadbca 50%) 100% 0/50% 100% no-repeat; }
@@ -41,5 +45,5 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .details__copy { max-width:480px; font:17px/1.8 'Italiana',serif; }.outline-button,.light-button { margin-top:20px; padding:15px 30px; border:1px solid currentColor; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
 .names { margin-top:60px; font:52px 'Parisienne',cursive; }.names span { color:var(--wine); }
 .rsvp { min-height:80svh; padding:100px 24px 45px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 20%,#79172f,#460511 70%); }.rsvp>p:not(.eyebrow,.footer-mark){max-width:430px;line-height:1.8}.footer-mark { margin:90px 0 0; font:35px 'Parisienne',cursive; }
-@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:120px;height:120px}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
+@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:120px;height:120px}.plant--left{left:-13%;top:31%;width:34%}.plant--top{right:-2%;top:-7%;width:27%}.plant--right{right:-13%;top:9%;width:31%}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.seal{transition:none}}
