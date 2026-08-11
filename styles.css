@@ -20,6 +20,7 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 .heading h1 span { margin:0 .02em; font-size:1.08em; }
 
 .arrangement { position:absolute; z-index:2; top:21.4%; left:4.7%; width:90.6%; height:56.2%; }
+.arrangement:focus { outline:none; }
 .arrangement img { display:block; user-select:none; pointer-events:none; }
 .envelope-back { position:absolute; z-index:1; left:7%; top:16%; width:88%; height:84%; background:linear-gradient(108deg,#f8f0e5,#ece0d0 48%,#f7eee1); clip-path:polygon(0 36%,50% 0,100% 36%,100% 100%,0 100%); box-shadow:0 12px 30px #28000866; opacity:0; }
 .lace { position:absolute; z-index:0; left:-2%; top:-2%; width:104%; height:auto; filter:brightness(1.17) saturate(.75) drop-shadow(0 4px 5px #30000c33); }

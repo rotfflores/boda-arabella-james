@@ -22,7 +22,7 @@
       <h1>Arabella <span>&amp;</span> James</h1>
     </header>
 
-    <section class="arrangement" aria-label="Open envelope with save the date items">
+    <section class="arrangement" tabindex="-1" aria-label="Sobre abierto con los detalles de la fecha">
       <div class="envelope-back"></div>
       <img class="lace item-lace" src="assets/encaje-bordado.png" alt="" aria-hidden="true">
       <img class="plant plant-left item-plant-left" src="assets/planta-izquierda.png" alt="" aria-hidden="true">
@@ -47,11 +47,18 @@
 
   <script>
     const button = document.querySelector('.envelope-button');
+    const arrangement = document.querySelector('.arrangement');
     button.addEventListener('click', () => {
       if (document.body.classList.contains('revealed')) return;
       button.disabled = true;
       document.body.classList.add('opening');
-      window.setTimeout(() => document.body.classList.add('revealed'), 650);
+      window.setTimeout(() => {
+        document.body.classList.add('revealed');
+        arrangement.focus({ preventScroll: true });
+        window.requestAnimationFrame(() => {
+          arrangement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }, 650);
     });
   </script>
 </body>
