@@ -35,6 +35,7 @@ jobs:
           cp assets/planta-superior.png _site/assets/planta-superior.png
           cp assets/planta-derecha.png _site/assets/planta-derecha.png
           cp assets/encaje-bordado.png _site/assets/encaje-bordado.png
+          cp assets/invitacion-completa.png _site/assets/invitacion-completa.png
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
