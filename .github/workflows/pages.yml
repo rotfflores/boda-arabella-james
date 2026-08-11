@@ -40,6 +40,7 @@ jobs:
           cp assets/sobre-abierto.png _site/assets/sobre-abierto.png
           cp assets/fondo-terciopelo.png _site/assets/fondo-terciopelo.png
           cp assets/sello-aj.png _site/assets/sello-aj.png
+          cp assets/og-boda.png _site/assets/og-boda.png
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

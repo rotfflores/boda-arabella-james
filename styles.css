@@ -91,9 +91,7 @@ body { min-height:100svh; overflow-x:hidden; color:#f5ecdf; background:url('asse
 .revealed .whatsapp-float { display:block; }
 .site-footer { width:min(100%,853px); margin:0 auto; padding:50px 24px 46px; color:#f6ebdf; background:#3b000b url('assets/fondo-terciopelo.png') center bottom/cover; text-align:center; opacity:0; visibility:hidden; transition:opacity .7s .35s ease; }
 .revealed .site-footer { opacity:1; visibility:visible; }
-.footer-monogram { margin:0 0 15px; font:400 42px/1 'Great Vibes',cursive; }
-.site-footer p:not(.footer-monogram) { margin:0; font:500 clamp(13px,2.5vw,17px)/1.4 'Cormorant Garamond',serif; letter-spacing:.045em; }
-.site-footer span { display:block; margin-top:8px; color:#ddcbbd; font:400 clamp(12px,2.3vw,15px)/1.4 'Cormorant Garamond',serif; letter-spacing:.04em; }
+.site-footer p { margin:0; font:500 clamp(13px,2.5vw,17px)/1.4 'Cormorant Garamond',serif; letter-spacing:.045em; }
 
 .item-heading,.item-lace,.item-plant-left,.item-plant-top,.item-plant-right,.item-photo-one,.item-photo-two,.item-save-date,.item-date-flower,.item-seal,.item-footer { opacity:0; }
 .revealed .envelope-back { animation:envelopeIn .65s .15s ease-out forwards; }
