@@ -9,6 +9,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <section class="envelope-screen" aria-label="Open wedding invitation">
+    <button class="envelope-button" type="button" aria-label="Open Arabella and James's invitation">
+      <img class="envelope-closed" src="assets/sobre-cerrado.png" alt="Closed wedding envelope with the monogram AJ">
+      <img class="envelope-open" src="assets/sobre-abierto.png" alt="" aria-hidden="true">
+    </button>
+    <p class="open-hint">Toca el sobre para abrir</p>
+  </section>
   <main class="invitation-stage">
     <div class="piece piece-lace" aria-hidden="true"></div>
     <div class="piece piece-plants" aria-hidden="true"></div>
@@ -21,5 +28,14 @@
     <div class="piece piece-footer" aria-hidden="true"></div>
     <img class="invitation" src="assets/invitacion-completa.png" alt="We're getting married! Arabella and James. Save our Date: 22.07.2027, Lake Como, Italy. Formal invitation to follow.">
   </main>
+  <script>
+    const button = document.querySelector('.envelope-button');
+    button.addEventListener('click', () => {
+      if (document.body.classList.contains('opening')) return;
+      document.body.classList.add('opening');
+      button.disabled = true;
+      window.setTimeout(() => document.body.classList.add('revealed'), 1250);
+    });
+  </script>
 </body>
 </html>
