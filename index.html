@@ -11,30 +11,47 @@
 <body>
   <section class="envelope-screen" aria-label="Open wedding invitation">
     <button class="envelope-button" type="button" aria-label="Open Arabella and James's invitation">
-      <img class="envelope-closed" src="assets/sobre-cerrado.png" alt="Closed wedding envelope with the monogram AJ">
-      <img class="envelope-open" src="assets/sobre-abierto.png" alt="" aria-hidden="true">
+      <img src="assets/sobre-cerrado.png" alt="Closed wedding envelope with the monogram AJ">
     </button>
-    <p class="open-hint">Toca el sobre para abrir</p>
+    <p>Touch the envelope to open</p>
   </section>
-  <main class="invitation-stage">
-    <div class="piece piece-lace" aria-hidden="true"></div>
-    <div class="piece piece-plants" aria-hidden="true"></div>
-    <div class="piece piece-photo-one" aria-hidden="true"></div>
-    <div class="piece piece-photo-two" aria-hidden="true"></div>
-    <div class="piece piece-save-date" aria-hidden="true"></div>
-    <div class="piece piece-envelope" aria-hidden="true"></div>
-    <div class="piece piece-flower" aria-hidden="true"></div>
-    <div class="piece piece-heading" aria-hidden="true"></div>
-    <div class="piece piece-footer" aria-hidden="true"></div>
-    <img class="invitation" src="assets/invitacion-completa.png" alt="We're getting married! Arabella and James. Save our Date: 22.07.2027, Lake Como, Italy. Formal invitation to follow.">
+
+  <main class="invitation-stage" aria-label="Wedding invitation for Arabella and James">
+    <header class="heading item-heading">
+      <p>We're getting married!</p>
+      <h1>Arabella <span>&amp;</span> James</h1>
+    </header>
+
+    <section class="arrangement" aria-label="Open envelope with save the date items">
+      <div class="envelope-back"></div>
+      <img class="lace item-lace" src="assets/encaje-bordado.png" alt="" aria-hidden="true">
+      <img class="plant plant-left item-plant-left" src="assets/planta-izquierda.png" alt="" aria-hidden="true">
+      <img class="plant plant-top item-plant-top" src="assets/planta-superior.png" alt="" aria-hidden="true">
+      <img class="plant plant-right item-plant-right" src="assets/planta-derecha.png" alt="" aria-hidden="true">
+
+      <div class="polaroid polaroid-one item-photo-one" role="img" aria-label="Photo of Arabella and James"></div>
+      <div class="polaroid polaroid-two item-photo-two" role="img" aria-label="Photo of Arabella and James"></div>
+      <img class="save-date item-save-date" src="assets/save-our-date.png" alt="Save our Date">
+      <img class="date-flower item-date-flower" src="assets/flor-roja.png" alt="22.07.2027, Lake Como, Italy">
+
+      <div class="envelope-front"></div>
+      <div class="monogram item-monogram" aria-label="Arabella and James">A<span>J</span></div>
+    </section>
+
+    <footer class="closing item-footer">
+      <p>Lake Como, Italy</p>
+      <strong>22.07.2027</strong>
+      <span>Formal invitation to follow</span>
+    </footer>
   </main>
+
   <script>
     const button = document.querySelector('.envelope-button');
     button.addEventListener('click', () => {
-      if (document.body.classList.contains('opening')) return;
-      document.body.classList.add('opening');
+      if (document.body.classList.contains('revealed')) return;
       button.disabled = true;
-      window.setTimeout(() => document.body.classList.add('revealed'), 1250);
+      document.body.classList.add('opening');
+      window.setTimeout(() => document.body.classList.add('revealed'), 650);
     });
   </script>
 </body>
