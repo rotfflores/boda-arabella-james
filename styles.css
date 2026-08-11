@@ -24,14 +24,14 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .plant--top { right:13%; top:-1%; width:30%; height:28%; transform:rotate(6deg); }
 .plant--right { right:-10%; top:17%; width:32%; height:63%; transform:rotate(5deg); transform-origin:bottom; }
 .card { position:absolute; z-index:2; left:8%; right:8%; bottom:13%; height:84%; background:transparent; transition:transform 1.15s cubic-bezier(.2,.8,.2,1); transform:translateY(-10%); color:#53323b; }
-.card:before { content:""; position:absolute; z-index:0; left:18%; right:10%; top:0; height:48%; border-radius:50%; opacity:.65; background:repeating-radial-gradient(circle,transparent 0 9px,rgba(213,190,194,.58) 10px 11px); border:4px dotted #d7c0c4; }
+.lace-resource { position:absolute; z-index:0; left:1%; top:0; width:98%; height:49%; object-fit:contain; object-position:center bottom; pointer-events:none; user-select:none; filter:drop-shadow(0 4px 5px rgba(66,22,32,.13)); }
 .is-open .card { transform:translateY(-52%); }
 .envelope__front { position:absolute; z-index:4; left:2%; right:2%; bottom:0; height:61%; background:#f4eade; clip-path:polygon(0 0,50% 22%,100% 0,100% 100%,0 100%); }
 .envelope__front:after { display:none; }
-.photo { position:absolute; width:44%; height:46%; border:7px solid #faf7f3; box-shadow:0 5px 12px #7a666655; overflow:hidden; background-image:url('assets/couple-photos.png'); background-repeat:no-repeat; background-size:200% auto; }
+.photo { position:absolute; z-index:2; width:44%; height:46%; border:7px solid #faf7f3; box-shadow:0 5px 12px #7a666655; overflow:hidden; background-image:url('assets/couple-photos.png'); background-repeat:no-repeat; background-size:200% auto; }
 .photo--one { left:4%; top:10%; transform:rotate(-3deg); background-position:left top; }
 .photo--two { left:7%; top:43%; transform:rotate(2deg); background-position:right top; }
-.date-card { position:absolute; right:-3%; top:23%; width:66%; height:43%; object-fit:contain; transform:rotate(2deg); user-select:none; }
+.date-card { position:absolute; z-index:2; right:-3%; top:23%; width:66%; height:43%; object-fit:contain; transform:rotate(2deg); user-select:none; }
 .flower { position:absolute; z-index:6; right:14%; bottom:40%; width:148px; height:148px; object-fit:contain; user-select:none; transition:transform .9s cubic-bezier(.2,.8,.2,1); }
 .is-open .flower { transform:translateY(-90%); }
 .seal { position:absolute; z-index:6; left:50%; bottom:11%; transform:translateX(-50%); width:auto; aspect-ratio:auto; border-radius:0; display:block; color:#4d3b3d; background:transparent; border:0; box-shadow:none; font:52px 'Parisienne',cursive; transition:none; }
