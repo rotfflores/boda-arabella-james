@@ -45,6 +45,28 @@
     </footer>
   </main>
 
+  <section class="details-panel" aria-labelledby="join-title">
+    <div class="details-inner">
+      <p class="eyebrow" id="join-title">Esperamos que puedas acompañarnos</p>
+
+      <div class="countdown" role="timer" aria-live="polite" aria-label="Cuenta regresiva para la boda">
+        <div><strong id="days">000</strong><span>Días</span></div>
+        <b aria-hidden="true">:</b>
+        <div><strong id="hours">00</strong><span>Horas</span></div>
+        <b aria-hidden="true">:</b>
+        <div><strong id="minutes">00</strong><span>Minutos</span></div>
+        <b aria-hidden="true">:</b>
+        <div><strong id="seconds">00</strong><span>Segundos</span></div>
+      </div>
+
+      <p class="address-copy">La invitación formal llegará próximamente. Haz clic abajo para compartir tu dirección.</p>
+      <a class="address-button" href="mailto:?subject=Dirección para la boda de Arabella y James&amp;body=Hola, mi dirección es: ">Comparte tu dirección</a>
+
+      <p class="signature">Arabella <span>&amp;</span> James</p>
+      <p class="contact-copy">Para cualquier duda, contáctanos</p>
+    </div>
+  </section>
+
   <script>
     const button = document.querySelector('.envelope-button');
     const arrangement = document.querySelector('.arrangement');
@@ -60,6 +82,30 @@
         });
       }, 650);
     });
+
+    const weddingDate = new Date('2027-07-22T00:00:00+02:00').getTime();
+    const countdownValues = {
+      days: document.querySelector('#days'),
+      hours: document.querySelector('#hours'),
+      minutes: document.querySelector('#minutes'),
+      seconds: document.querySelector('#seconds')
+    };
+
+    function updateCountdown() {
+      const distance = Math.max(0, weddingDate - Date.now());
+      const days = Math.floor(distance / 86400000);
+      const hours = Math.floor((distance % 86400000) / 3600000);
+      const minutes = Math.floor((distance % 3600000) / 60000);
+      const seconds = Math.floor((distance % 60000) / 1000);
+
+      countdownValues.days.textContent = String(days).padStart(3, '0');
+      countdownValues.hours.textContent = String(hours).padStart(2, '0');
+      countdownValues.minutes.textContent = String(minutes).padStart(2, '0');
+      countdownValues.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
