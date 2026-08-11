@@ -23,13 +23,11 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .is-open .card { transform:translateY(-65%); }
 .envelope__front { position:absolute; z-index:4; left:3%; right:3%; bottom:2%; height:66%; background:linear-gradient(145deg,transparent 49.6%,#f4eade 50%) 0 0/50% 100% no-repeat,linear-gradient(215deg,transparent 49.6%,#eadbca 50%) 100% 0/50% 100% no-repeat; }
 .envelope__front:after { content:""; position:absolute; inset:22% 0 0; background:linear-gradient(35deg,#eee1d3 49%,transparent 50%) left/50% 100% no-repeat,linear-gradient(-35deg,#f5ebe0 49%,transparent 50%) right/50% 100% no-repeat; }
-.photo { position:absolute; width:41%; height:40%; background:#d8d0c8; border:7px solid #faf7f3; box-shadow:0 5px 12px #7a666655; overflow:hidden; }
-.photo i { position:absolute; inset:0; background:radial-gradient(circle at 45% 35%,#d1cbc4 0 12%,transparent 13%),linear-gradient(120deg,#201c1c 0 30%,#a39c96 31% 55%,#322d2c 56% 100%); filter:grayscale(1); }
-.photo--one { left:5%; top:4%; transform:rotate(-4deg); }
-.photo--two { left:9%; top:39%; transform:rotate(4deg); }
-.date-card { position:absolute; right:-2%; top:14%; width:54%; height:35%; display:grid; place-content:center; background:#f8f1ea; border-radius:50% 50% 42% 48%; font:28px/1 'Parisienne',cursive; transform:rotate(4deg); }
-.flower { position:absolute; z-index:2; right:13%; bottom:12%; width:105px; aspect-ratio:1; display:grid; place-content:center; background:var(--wine); color:white; font-size:9px; letter-spacing:.12em; text-transform:uppercase; line-height:1.5; clip-path:polygon(50% 0,61% 12%,78% 7%,85% 23%,100% 32%,92% 50%,100% 67%,83% 76%,77% 94%,59% 88%,47% 100%,35% 86%,17% 92%,12% 73%,0 63%,8% 47%,0 31%,17% 22%,23% 5%,40% 11%); }
-.flower small { font-size:8px; }
+.photo { position:absolute; width:41%; height:40%; border:7px solid #faf7f3; box-shadow:0 5px 12px #7a666655; overflow:hidden; background-image:url('assets/couple-photos.png'); background-repeat:no-repeat; background-size:200% 100%; }
+.photo--one { left:5%; top:4%; transform:rotate(-4deg); background-position:left center; }
+.photo--two { left:9%; top:39%; transform:rotate(4deg); background-position:right center; }
+.date-card { position:absolute; right:-10%; top:8%; width:72%; height:48%; object-fit:contain; transform:rotate(4deg); user-select:none; }
+.flower { position:absolute; z-index:2; right:3%; bottom:1%; width:150px; height:150px; object-fit:contain; user-select:none; }
 .seal { position:absolute; z-index:6; left:50%; bottom:23%; transform:translate(-50%,50%); width:74px; aspect-ratio:1; border-radius:50%; display:grid; place-content:center; background:#6e0920; border:2px solid #8e2941; box-shadow:0 4px 12px #2c020e88; font:27px 'Parisienne',cursive; transition:.5s; }
 .seal span { margin-left:-5px; }.is-open .seal { transform:translate(-50%,50%) scale(.82); opacity:.15; }
 .open-hint { z-index:2; min-height:1em; margin:12px 0 0; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
@@ -43,5 +41,5 @@ h1 em,h2 em { font:400 1.05em 'Parisienne',cursive; }
 .details__copy { max-width:480px; font:17px/1.8 'Italiana',serif; }.outline-button,.light-button { margin-top:20px; padding:15px 30px; border:1px solid currentColor; font-size:9px; letter-spacing:.22em; text-transform:uppercase; }
 .names { margin-top:60px; font:52px 'Parisienne',cursive; }.names span { color:var(--wine); }
 .rsvp { min-height:80svh; padding:100px 24px 45px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 20%,#79172f,#460511 70%); }.rsvp>p:not(.eyebrow,.footer-mark){max-width:430px;line-height:1.8}.footer-mark { margin:90px 0 0; font:35px 'Parisienne',cursive; }
-@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:83px}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
+@media (max-width:600px){.hero{padding-top:20px}.intro{margin-top:52px}.intro h1{font-size:clamp(39px,11vw,48px);white-space:nowrap}nav div{gap:14px}.envelope{margin-top:25px}.card{height:86%}.flower{width:120px;height:120px}.details{padding-top:80px}.countdown{margin-top:45px}.hero-date p{font-size:20px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.seal{transition:none}}
