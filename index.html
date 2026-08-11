@@ -1,71 +1,43 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#570719">
-  <meta name="description" content="Invitación de boda de Arabella y James en Lake Como, Italia.">
+  <meta name="theme-color" content="#5c0013">
+  <meta name="description" content="Save the date for Arabella and James — Lake Como, Italy, 22.07.2027.">
   <title>Arabella &amp; James | 22.07.2027</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <section class="hero" id="inicio">
-      <div class="grain"></div>
-      <nav aria-label="Navegación principal">
-        <a href="#inicio" class="monogram">A<span>J</span></a>
-        <div><a href="#detalles">Detalles</a><a href="#confirmar">Confirmar</a></div>
-      </nav>
-      <div class="intro"><p class="eyebrow">Nos vamos a casar</p><h1>Arabella <em>&amp;</em> James</h1></div>
-      <button class="envelope" type="button" aria-label="Abrir invitación">
-        <span class="envelope__back"></span>
-        <img class="plant plant--left" src="assets/planta-izquierda.png" alt="" aria-hidden="true" draggable="false">
-        <img class="plant plant--top" src="assets/planta-superior.png" alt="" aria-hidden="true" draggable="false">
-        <img class="plant plant--right" src="assets/planta-derecha.png" alt="" aria-hidden="true" draggable="false">
-        <span class="card">
-          <img class="lace-resource" src="assets/encaje-bordado.png" alt="" aria-hidden="true" draggable="false">
-          <span class="photo photo--one"></span><span class="photo photo--two"></span>
-          <img class="date-card" src="assets/save-our-date.png" alt="Save our Date" draggable="false">
-        </span>
-        <span class="envelope__front"></span>
-        <img class="flower" src="assets/flor-roja.png" alt="22.07.2027, Lake Como, Italy" draggable="false">
-        <span class="seal">A<span>J</span></span>
-      </button>
-      <p class="open-hint">Toca el sello para abrir</p>
-      <div class="hero-date"><p>Lake Como, Italy</p><strong>22 · 07 · 2027</strong><span>Formal invitation to follow</span></div>
+  <main class="invitation" aria-label="Wedding save the date for Arabella and James">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="heading">
+      <p>We're getting married!</p>
+      <h1>Arabella <span>&amp;</span> James</h1>
+    </header>
+
+    <section class="arrangement" aria-label="Save our date">
+      <div class="envelope-back" aria-hidden="true"></div>
+      <img class="lace" src="assets/encaje-bordado.png" alt="" aria-hidden="true">
+      <img class="plant plant-left" src="assets/planta-izquierda.png" alt="" aria-hidden="true">
+      <img class="plant plant-top" src="assets/planta-superior.png" alt="" aria-hidden="true">
+      <img class="plant plant-right" src="assets/planta-derecha.png" alt="" aria-hidden="true">
+
+      <div class="polaroid polaroid-one" aria-label="Photo of Arabella and James"></div>
+      <div class="polaroid polaroid-two" aria-label="Photo of Arabella and James"></div>
+      <img class="save-date" src="assets/save-our-date.png" alt="Save our Date">
+      <img class="date-flower" src="assets/flor-roja.png" alt="22.07.2027, Lake Como, Italy">
+
+      <div class="envelope-front" aria-hidden="true"></div>
+      <div class="monogram" aria-label="Arabella and James">A<span>J</span></div>
     </section>
-    <section class="details" id="detalles">
-      <p class="eyebrow">Esperamos contar contigo</p><h2>El comienzo de<br><em>para siempre</em></h2>
-      <div class="countdown" aria-label="Cuenta regresiva para la boda">
-        <div class="countdown__item"><strong data-unit="days">00</strong><span>días</span></div>
-        <div class="countdown__item"><strong data-unit="hours">00</strong><span>horas</span></div>
-        <div class="countdown__item"><strong data-unit="minutes">00</strong><span>minutos</span></div>
-        <div class="countdown__item"><strong data-unit="seconds">00</strong><span>segundos</span></div>
-      </div>
-      <p class="details__copy">Acompáñanos a celebrar el amor, la alegría y el inicio de nuestra vida juntos en un lugar inolvidable.</p>
-      <a class="outline-button" href="#confirmar">Ver los detalles</a><div class="names">Arabella <span>&amp;</span> James</div>
-    </section>
-    <section class="rsvp" id="confirmar">
-      <p class="eyebrow">Reserva la fecha</p><h2>Nos encantará<br>celebrar contigo</h2>
-      <p>Confirma tu asistencia antes del 22 de mayo de 2027.</p>
-      <a class="light-button" href="mailto:hello@arabellajames.com?subject=Confirmación de asistencia">Confirmar asistencia</a>
-      <p class="footer-mark">A <span>&amp;</span> J</p>
-    </section>
+
+    <footer class="closing">
+      <p>Lake Como, Italy</p>
+      <strong>22.07.2027</strong>
+      <span>Formal invitation to follow</span>
+    </footer>
   </main>
-  <script>
-    const envelope = document.querySelector('.envelope');
-    const hint = document.querySelector('.open-hint');
-    envelope.addEventListener('click', () => {
-      envelope.classList.add('is-open');
-      hint.textContent = 'Desliza para descubrir nuestra historia';
-    });
-    const wedding = new Date('2027-07-22T17:00:00');
-    function tick() {
-      const total = Math.max(0, wedding.getTime() - Date.now());
-      const values = { days: Math.floor(total/86400000), hours: Math.floor(total/3600000%24), minutes: Math.floor(total/60000%60), seconds: Math.floor(total/1000%60) };
-      Object.entries(values).forEach(([unit,value]) => document.querySelector(`[data-unit="${unit}"]`).textContent = String(value).padStart(2,'0'));
-    }
-    tick(); setInterval(tick,1000);
-  </script>
 </body>
 </html>
